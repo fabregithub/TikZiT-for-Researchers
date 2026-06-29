@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \matrix [matrix of nodes, nodes={style=process, minimum width=3cm}, row sep=0.5cm, column sep=0.5cm] {
+            {} & Cases & Controls \\
+            Exposed & a & b \\
+            Unexposed & c & d \\
+        };
+    \end{pgfonlayer}
+\end{tikzpicture}

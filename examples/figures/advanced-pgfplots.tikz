@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [style=process] (a) at (0, 3) {Cohort enrolled (n=400)};
+    \end{pgfonlayer}
+    \begin{axis}[
+        at={(0,-4)}, anchor=north,
+        width=7cm, height=4cm,
+        xlabel={Follow-up year}, ylabel={n remaining},
+        ymin=0,
+    ]
+        \addplot coordinates {(0,400) (1,360) (2,310) (3,275)};
+    \end{axis}
+    \begin{pgfonlayer}{edgelayer}
+        \draw [style=arrow] (a) to (0,0);
+    \end{pgfonlayer}
+\end{tikzpicture}

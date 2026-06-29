@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [style=include] (0) at (0, 0) {Screened (n=200)};
+        \node [style=decision] (1) at (0, -2.5) {Meets inclusion criteria?};
+        \node [style=include] (2) at (4, -5) {Enrolled (n=150)};
+        \node [style=exclude] (3) at (-4, -5) {Excluded (n=50)};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw [style=arrow] (0) to (1);
+        \draw [style=arrow] (1) to node [style=edgelabel] {Yes} (2);
+        \draw [style=arrow] (1) to node [style=edgelabel] {No} (3);
+    \end{pgfonlayer}
+\end{tikzpicture}

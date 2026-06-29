@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{shapes.geometric}
+
+% TikZiT draws nodes/edges on two named layers; LaTeX needs them declared
+% before any .tikz file produced by TikZiT can be \input. "main" (pgf's own
+% default layer) must be included too, or anything drawn outside nodelayer/
+% edgelayer silently fails to render -- see book/chapter08_advanced_tikz.md.
+\pgfdeclarelayer{nodelayer}
+\pgfdeclarelayer{edgelayer}
+\pgfsetlayers{main,nodelayer,edgelayer}
+
+\input{../styles/epiflow.tikzstyles}
+
+\begin{document}
+
+\title{Example Manuscript with an Embedded TikZiT Figure}
+\author{}
+\date{}
+\maketitle
+
+\section{Methods}
+
+Participant flow through the study is shown in Figure~\ref{fig:flow}.
+
+\begin{figure}[h]
+    \centering
+    \input{figures/first-flowchart.tikz}
+    \caption{Participant flow.}
+    \label{fig:flow}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \input{figures/decision-example.tikz}
+    \caption{Eligibility screening with a labeled decision branch.}
+    \label{fig:decision}
+\end{figure}
+
+\end{document}

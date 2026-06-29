@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [style=include] (a) at (0, 0) {Cohort A (n=200)};
+        \node [style=include] (b) at (6, 0) {Cohort B (n=180)};
+        \node [style=process] (mid) at ($(a)!0.5!(b) + (0,-2)$) {Pooled analysis};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw [style=arrow] (a) to (mid);
+        \draw [style=arrow] (b) to (mid);
+    \end{pgfonlayer}
+\end{tikzpicture}

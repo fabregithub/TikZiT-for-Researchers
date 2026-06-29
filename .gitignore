@@ -1,0 +1,17 @@
+cache/
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+*.out
+.DS_Store
+
+# Generated build outputs -- regenerate with scripts/build-all.sh and
+# scripts/build-book-pdf.sh. Only the PNG previews are tracked, since
+# those are the ones actually embedded in book/*.md.
+images/*.pdf
+images/*.svg
+/*.pdf
+examples/*.pdf

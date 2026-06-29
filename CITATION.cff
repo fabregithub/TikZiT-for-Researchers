@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this handbook, please cite it as below."
+title: "TikZiT for Researchers: Scientific Diagrams and Flowcharts with TikZiT and TikZ"
+authors:
+  - family-names: "[Your Last Name]"
+    given-names: "[Your First Name]"
+version: 0.1.0
+date-released: 2026-06-29
+license: MIT

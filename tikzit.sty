@@ -1,0 +1,18 @@
+% Minimal tikzit.sty, providing what the TikZiT VS Code extension's
+% Build/Preview commands require to compile a raw .tikz file:
+%   - the tikz package itself
+%   - the nodelayer/edgelayer pgfonlayer layers every TikZiT file uses
+%   - a "tikzfig" style, referenced by the extension's generated preamble
+%     (\tikzstyle{every picture}=[tikzfig]) when this file is present
+\RequirePackage{tikz}
+
+\pgfdeclarelayer{nodelayer}
+\pgfdeclarelayer{edgelayer}
+% "main" (pgf's default, unnamed layer) must be included explicitly here.
+% Omitting it silently drops any content not wrapped in our own pgfonlayer
+% blocks -- this bites \foreach/\matrix content drawn outside one, and any
+% library (e.g. pgfplots' \begin{axis}) that draws via the default layer
+% internally. See book/chapter08_advanced_tikz.md.
+\pgfsetlayers{main,nodelayer,edgelayer}
+
+\tikzstyle{tikzfig}=[]

@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [style=process] (0) at (0, 0) {Source population assessed for eligibility (n=500)};
+        \node [style=exclude] (1) at (4, -1.5) {Excluded (n=80)\\Did not meet criteria (n=50)\\Declined participation (n=30)};
+        \node [style=include] (2) at (0, -3) {Eligible cohort enrolled (n=420)};
+        \node [style=exclude] (3) at (4, -4.5) {Lost to follow-up (n=35)};
+        \node [style=include] (4) at (0, -6) {Analyzed (n=385)};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw [style=arrow] (0) to (1);
+        \draw [style=arrow] (0) to (2);
+        \draw [style=arrow] (2) to (3);
+        \draw [style=arrow] (2) to (4);
+    \end{pgfonlayer}
+\end{tikzpicture}

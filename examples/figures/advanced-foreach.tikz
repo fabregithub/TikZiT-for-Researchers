@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [style=process] (r) at (0, 0) {Randomized (n=400)};
+        \foreach \i [count=\n from 0] in {1,2,3,4} {
+            \node [style=include] (arm\i) at (\n*4.5 - 6.75, -2.5) {Arm \i{} (n=100)};
+        }
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \foreach \i in {1,2,3,4} {
+            \draw [style=arrow] (r) to (arm\i);
+        }
+    \end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [style=process] (0) at (0, 0) {Assessed for eligibility (n=300)};
+        \node [style=exclude] (1) at (5, -1.5) {Excluded (n=50)\\Not meeting criteria (n=30)\\Declined to participate (n=20)};
+        \node [style=process] (2) at (0, -3) {Randomized (n=250)};
+        \node [style=include] (3) at (-4, -5) {Allocated to intervention (n=125)};
+        \node [style=include] (4) at (4, -5) {Allocated to control (n=125)};
+        \node [style=exclude] (5) at (-8, -6.5) {Lost to follow-up (n=8)};
+        \node [style=include] (6) at (-4, -8) {Analyzed (n=117)};
+        \node [style=exclude] (7) at (8, -6.5) {Lost to follow-up (n=5)};
+        \node [style=include] (8) at (4, -8) {Analyzed (n=120)};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw [style=arrow] (0) to (1);
+        \draw [style=arrow] (0) to (2);
+        \draw [style=arrow] (2) to (3);
+        \draw [style=arrow] (2) to (4);
+        \draw [style=arrow] (3) to (5);
+        \draw [style=arrow] (3) to (6);
+        \draw [style=arrow] (4) to (7);
+        \draw [style=arrow] (4) to (8);
+    \end{pgfonlayer}
+\end{tikzpicture}

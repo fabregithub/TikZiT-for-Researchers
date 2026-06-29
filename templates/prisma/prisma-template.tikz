@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [style=process] (0) at (0, 0) {Records identified through database searching (n=500)};
+        \node [style=exclude] (1) at (4.5, -1.5) {Duplicates removed (n=50)};
+        \node [style=process] (2) at (0, -3) {Records screened (n=450)};
+        \node [style=exclude] (3) at (4.5, -4.5) {Records excluded (n=300)};
+        \node [style=process] (4) at (0, -6) {Full-text articles assessed for eligibility (n=150)};
+        \node [style=exclude] (5) at (4.5, -7.5) {Full-text articles excluded, with reasons (n=100)};
+        \node [style=include] (6) at (0, -9) {Studies included in qualitative synthesis (n=50)};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw [style=arrow] (0) to (1);
+        \draw [style=arrow] (0) to (2);
+        \draw [style=arrow] (2) to (3);
+        \draw [style=arrow] (2) to (4);
+        \draw [style=arrow] (4) to (5);
+        \draw [style=arrow] (4) to (6);
+    \end{pgfonlayer}
+\end{tikzpicture}
