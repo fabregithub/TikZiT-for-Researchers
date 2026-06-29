@@ -1,4 +1,4 @@
-[← Index](index.md) | [← Chapter 8](chapter08_advanced_tikz.md) | [Next: Appendix →](appendix.md)
+[← Index](index.md) | [← Chapter 8](chapter08_advanced_tikz.md) | [Next: Chapter 10 →](chapter10_manuscript_integration.md)
 
 # Chapter 9 — Troubleshooting
 

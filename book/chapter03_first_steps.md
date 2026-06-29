@@ -137,21 +137,24 @@ paper you `\input{}` it inside a `figure` environment:
 \end{figure}
 ```
 
-[`examples/paper.tex`](../examples/paper.tex) shows this end to end. Note the three lines its
-preamble needs that a fresh `article.cls` document doesn't have by default — without them,
-`pdflatex` fails on a bare `\input{...}` of a TikZiT file even though the VS Code preview renders
-fine (the extension adds these automatically for previews; your manuscript's own preamble won't
-have them unless you add them yourself):
+[`examples/paper.tex`](../examples/paper.tex) shows this end to end, with three embedded
+figures. A full walkthrough of everything the host document needs — preamble setup, sizing,
+multiple figures, cross-references, and common errors — is in
+[Chapter 10 — Integrating into a Real LaTeX Document](chapter10_manuscript_integration.md).
+
+The short version: a fresh `article.cls` document needs four additions before it can
+`\input` a TikZiT file:
 
 ```latex
 \pgfdeclarelayer{nodelayer}
 \pgfdeclarelayer{edgelayer}
-\pgfsetlayers{nodelayer,edgelayer}
-\input{styles/epiflow.tikzstyles}  % defines style=box, style=arrow, etc.
+\pgfsetlayers{main,nodelayer,edgelayer}    % "main" must be included
+\input{styles/epiflow.tikzstyles}          % defines style=box, style=arrow, etc.
 ```
 
 The layer declarations are required because every TikZiT node/edge lives on the `nodelayer`/
-`edgelayer` layers (step 1 above); the style file `\input` is required because nodes only
-reference style *names* (`style=box`), not inline formatting.
+`edgelayer` layers; the `main` layer must be listed or content drawn outside those two blocks
+silently disappears; the style file `\input` is required because nodes only reference style
+*names* (`style=box`), not inline formatting.
 
 [Next: Chapter 4 — Styles →](chapter04_styles.md)

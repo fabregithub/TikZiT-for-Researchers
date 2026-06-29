@@ -14,4 +14,5 @@
 7. [Cookbook](chapter07_cookbook.md)
 8. [Advanced TikZ](chapter08_advanced_tikz.md)
 9. [Troubleshooting](chapter09_troubleshooting.md)
+10. [Integrating into a Real LaTeX Document](chapter10_manuscript_integration.md)
 - [Appendix](appendix.md)
