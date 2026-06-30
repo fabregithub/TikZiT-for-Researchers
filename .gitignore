@@ -15,3 +15,4 @@ images/*.pdf
 images/*.svg
 /*.pdf
 examples/*.pdf
+examples/paper-preview*.png

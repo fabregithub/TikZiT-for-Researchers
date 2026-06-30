@@ -24,8 +24,8 @@ build_one() {
         echo '\tikzstyle{every picture}=[tikzfig]'
         echo '\usepackage[graphics,active,tightpage]{preview}'
         echo '\PreviewEnvironment{tikzpicture}'
-        echo "\\input{$ROOT/epiflow.tikzstyles}"
-        echo "\\input{$ROOT/epiflow.tikzdefs}"
+        echo "\\input{$ROOT/researchflow.tikzstyles}"
+        echo "\\input{$ROOT/researchflow.tikzdefs}"
         echo '\begin{document}'
         echo
         cat "$tikz_file"

@@ -26,7 +26,7 @@ covers layout habits that keep diagrams readable as they grow past 3–4 boxes.
 \end{tikzpicture}
 ```
 
-Two new styles, added to [`epiflow.tikzstyles`](../epiflow.tikzstyles) in Chapter 4's pattern:
+Two new styles, added to [`researchflow.tikzstyles`](../researchflow.tikzstyles) in Chapter 4's pattern:
 
 ```latex
 \tikzstyle{decision}=[draw=black, fill=yellow!10, diamond, aspect=2, align=center, inner sep=1pt]
@@ -46,7 +46,7 @@ The `fill=white` on `edgelabel` matters: without it, the arrow line is drawn str
 "Yes"/"No" text, which looks broken once compiled.
 
 **Note:** `diamond` requires `\usetikzlibrary{shapes.geometric}`, already added to
-[`epiflow.tikzdefs`](../epiflow.tikzdefs) (for the editor preview) and
+[`researchflow.tikzdefs`](../researchflow.tikzdefs) (for the editor preview) and
 [`examples/paper.tex`](../examples/paper.tex) (for the real manuscript build) — see Chapter 9 if
 you add a new shape/library and forget one of the two.
 

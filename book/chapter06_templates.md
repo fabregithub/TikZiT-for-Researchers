@@ -15,7 +15,7 @@ risk-assessment, and DAG templates are listed at the end as not-yet-built — sa
 whenever you get to them.
 
 All four were verified by compiling them with the project's actual `tikzit.sty` +
-`epiflow.tikzstyles` + `epiflow.tikzdefs` (the same wrapper Build/Preview generates), not just by
+`researchflow.tikzstyles` + `researchflow.tikzdefs` (the same wrapper Build/Preview generates), not just by
 eyeballing the source.
 
 ## 1. STROBE — [`templates/strobe/strobe-template.tikz`](../templates/strobe/strobe-template.tikz)
@@ -95,7 +95,7 @@ unboxed, indented **substep** text (the details under each stage) hanging off it
 
 ![lab protocol template](../images/lab-protocol-template.png)
 
-Four new styles in [`epiflow.tikzstyles`](../epiflow.tikzstyles) make this work:
+Four new styles in [`researchflow.tikzstyles`](../researchflow.tikzstyles) make this work:
 
 ```latex
 \tikzstyle{stage}=[draw=black, fill=white, rectangle, align=left, anchor=west, inner sep=4pt, inner xsep=12pt]

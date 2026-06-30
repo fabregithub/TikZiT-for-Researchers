@@ -49,7 +49,7 @@ Confirmed issues, found while writing this handbook:
      own directory. Fix: open the repo root as your workspace.
   2. The scan does **not** follow symlinks — a symlinked `.tikzstyles` at the root is skipped.
      The real file must physically exist at the workspace root. This project keeps the real
-     files there (`epiflow.tikzstyles`, `epiflow.tikzdefs`) and symlinks *from* `styles/` back
+     files there (`researchflow.tikzstyles`, `researchflow.tikzdefs`) and symlinks *from* `styles/` back
      up to them, not the other way around. See
      [Chapter 3, §3](chapter03_first_steps.md#3-loading-the-style-file).
 
@@ -73,7 +73,7 @@ Confirmed issues, found while writing this handbook:
 
 - **`Package pgfkeys Error: I do not know the key '/tikz/box'`** → the `.tikz` file references a
   style (`style=box`) that hasn't been `\input` into the document. Add
-  `\input{styles/epiflow.tikzstyles}` (or whichever `.tikzstyles` file defines it) before
+  `\input{styles/researchflow.tikzstyles}` (or whichever `.tikzstyles` file defines it) before
   `\input`-ing the figure.
 
 - **Canvas shows plain circles for every node, ignores fill colors, and doesn't show edge
@@ -137,7 +137,7 @@ Confirmed issues, found while writing this handbook:
 Known issues to document once confirmed:
 - Preview/build fails with "undefined control sequence" → missing `\usetikzlibrary{...}` for a
   library used by a style (e.g. `arrows.meta`) — add it to a `.tikzdefs` file and set it as
-  active in the style panel (see [`styles/epiflow.tikzdefs`](../styles/epiflow.tikzdefs))
+  active in the style panel (see [`styles/researchflow.tikzdefs`](../styles/researchflow.tikzdefs))
 - Nodes render as plain dots in the editor canvas → style file not loaded/selected in the style
   panel
 - **`Failed to open PDF file: Error: ENOENT ... cache/<name>.pdf`, with the `cache/` directory

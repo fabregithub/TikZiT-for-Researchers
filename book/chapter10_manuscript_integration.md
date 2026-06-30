@@ -19,7 +19,7 @@ Every TikZiT-generated `.tikz` file uses:
 1. **The `tikz` package** — `\usepackage{tikz}` (required for any TikZ content).
 2. **TikZ libraries** — any `\usetikzlibrary{...}` that your styles reference, e.g.
    `arrows.meta`, `shapes.geometric`, `positioning`, `calc`. These are listed in your
-   project's [`epiflow.tikzdefs`](../epiflow.tikzdefs).
+   project's [`researchflow.tikzdefs`](../researchflow.tikzdefs).
 3. **Two named layers** — every TikZiT file wraps nodes in `pgfonlayer{nodelayer}` and
    edges in `pgfonlayer{edgelayer}`. The host document must declare these layers before
    any `.tikz` file is `\input`, and must include pgf's default `main` layer in the
@@ -61,13 +61,13 @@ all four requirements wired up. The key preamble section is:
 \pgfdeclarelayer{edgelayer}
 \pgfsetlayers{main,nodelayer,edgelayer}
 
-\input{styles/epiflow.tikzstyles}
+\input{styles/researchflow.tikzstyles}
 ```
 
 When starting a new paper in a different directory, the only things to adjust are:
 
 - The `\usetikzlibrary{...}` list — match whatever is in your project's `.tikzdefs`
-  file. (The safest approach is to just copy the full list from `epiflow.tikzdefs`.)
+  file. (The safest approach is to just copy the full list from `researchflow.tikzdefs`.)
 - The `\input` path to your `.tikzstyles` file — make it relative to where your
   `.tex` file lives.
 
@@ -239,7 +239,7 @@ VS Code Build command won't work without `tikzit.sty` present at the workspace r
 | `Undefined control sequence \begin{pgfonlayer}` | `\usepackage{tikz}` missing | Add it to the preamble |
 | `Undefined control sequence \pgfdeclarelayer` | TikZ loaded but layer declaration missing | Add the three `\pgfdeclarelayer`/`\pgfsetlayers` lines |
 | Figure compiles but is completely blank | `main` omitted from `\pgfsetlayers` | Use `\pgfsetlayers{main,nodelayer,edgelayer}` |
-| `Undefined control sequence \style=...` | `.tikzstyles` file not `\input` | Add `\input{path/to/epiflow.tikzstyles}` |
+| `Undefined control sequence \style=...` | `.tikzstyles` file not `\input` | Add `\input{path/to/researchflow.tikzstyles}` |
 | `File '...' not found` on `\input{figures/...}` | Wrong relative path | Run `pdflatex` from the same directory as your `.tex` file, or use an absolute path |
 | `Undefined control sequence \node [style=diamond]` | `shapes.geometric` library missing | Add `\usetikzlibrary{shapes.geometric}` |
 

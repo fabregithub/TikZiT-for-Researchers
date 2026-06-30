@@ -40,14 +40,14 @@ you're hand-editing:
 
 | Library | What it adds | Used in |
 |---|---|---|
-| `positioning` | Relative placement keywords (`right=2cm of foo`) | Loaded in `epiflow.tikzdefs`, not yet exercised by a template |
+| `positioning` | Relative placement keywords (`right=2cm of foo`) | Loaded in `researchflow.tikzdefs`, not yet exercised by a template |
 | `calc` | `($...$)` arithmetic on coordinates — midpoints, offsets | §2 below |
 | `matrix` | `\matrix [matrix of nodes]` — grid layouts without manual coordinates | §3 below |
 | `decorations.pathreplacing` | Brace/bracket decorations along a path (e.g. annotating a span of boxes) | Not yet used in this project |
 
-All of these are added via `\usetikzlibrary{...}` in [`epiflow.tikzdefs`](../epiflow.tikzdefs) —
+All of these are added via `\usetikzlibrary{...}` in [`researchflow.tikzdefs`](../researchflow.tikzdefs) —
 the same mechanism Chapter 5 used for `shapes.geometric`. `pgfplots` (§4) is a full package, not a
-TikZ library, so it needs `\usepackage{pgfplots}` instead; `epiflow.tikzdefs` can hold that too,
+TikZ library, so it needs `\usepackage{pgfplots}` instead; `researchflow.tikzdefs` can hold that too,
 since the extension just `\input`s its contents as raw preamble code.
 
 ## 2. `\foreach` for repetitive structures

@@ -61,7 +61,7 @@ ERROR: can't retrieve number of pages from file hello-world.pdf
 
 Rather than fight a specific `dvisvgm` build, [`scripts/build-all.sh`](../scripts/build-all.sh)
 sidesteps it: it builds the same wrapper document the extension does (`tikzit.sty` +
-`epiflow.tikzstyles` + `epiflow.tikzdefs`) directly with `pdflatex`, then converts the resulting
+`researchflow.tikzstyles` + `researchflow.tikzdefs`) directly with `pdflatex`, then converts the resulting
 PDF with `pdftocairo -svg` (reliable, ships with `poppler`) and `pdftoppm -png` (for raster
 previews — e.g. embedding a figure in a Slack message or a slide deck where PDF isn't convenient).
 
@@ -74,7 +74,7 @@ bash scripts/build-all.sh
 Compiles every `.tikz` file under `templates/*/` and `examples/figures/` and writes
 `images/<name>.pdf`, `images/<name>.svg`, and `images/<name>.png` (150 DPI) for each. Useful
 for regenerating every figure at once after a shared style change (e.g. after editing
-`epiflow.tikzstyles`, to sanity-check nothing broke project-wide) — see
+`researchflow.tikzstyles`, to sanity-check nothing broke project-wide) — see
 [`images/`](../images/) for the current output. Requires `pdflatex`, `pdftocairo`, and
 `pdftoppm` on `PATH`; the script resolves all paths relative to its own location, so it can be
 run from any working directory.

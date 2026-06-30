@@ -49,7 +49,7 @@ file.
 ## 3. Loading the style file
 
 The diagram references `style=box` and `style=arrow`, defined in
-[`styles/epiflow.tikzstyles`](../styles/epiflow.tikzstyles). There's a sharp edge here worth
+[`styles/researchflow.tikzstyles`](../styles/researchflow.tikzstyles). There's a sharp edge here worth
 knowing up front: **the extension does not let you point the style panel at an arbitrary file.**
 It auto-detects styles by scanning the *top level of your open VS Code workspace folder* for a
 single `*.tikzstyles` file (and a `*.tikzdefs` file for preamble additions like
@@ -64,14 +64,14 @@ That means:
 2. The extension's directory scan does **not** follow symlinks — a symlinked `.tikzstyles` at
    the root is silently skipped (tested: it shows as `FileType.SymbolicLink`, not `FileType.File`,
    so the scan ignores it). So the *real* files have to live at the workspace root:
-   `epiflow.tikzstyles` and `epiflow.tikzdefs`. To keep `styles/` as the documented, canonical
+   `researchflow.tikzstyles` and `researchflow.tikzdefs`. To keep `styles/` as the documented, canonical
    home for project styles without duplicating content, this repo does it the other way around —
-   the real files are at the root, and `styles/epiflow.tikzstyles` / `styles/epiflow.tikzdefs`
+   the real files are at the root, and `styles/researchflow.tikzstyles` / `styles/researchflow.tikzdefs`
    are symlinks pointing back up to them (symlinks are fine as long as nothing needs to *scan*
    that directory for them). If you ever copy this project elsewhere, recreate that with:
    ```sh
-   ln -s ../epiflow.tikzstyles styles/epiflow.tikzstyles
-   ln -s ../epiflow.tikzdefs   styles/epiflow.tikzdefs
+   ln -s ../researchflow.tikzstyles styles/researchflow.tikzstyles
+   ln -s ../researchflow.tikzdefs   styles/researchflow.tikzdefs
    ```
 3. Open or refocus `first-flowchart.tikz` in the TikZ Editor. The style panel (right-hand side)
    should now show `box` and `arrow` as swatches instead of "no tikzstyles," and the canvas nodes
@@ -116,7 +116,7 @@ So the working sequence is always **Build, then Preview**. Run both now on
 first are a [`tikzit.sty`](../tikzit.sty) file at your workspace root (required for every
 `.tikz` file to compile at all) and any TikZ library a style needs (e.g. `shapes.geometric` for
 `diamond`, used starting in [Chapter 5](chapter05_flowcharts.md)) being listed in
-[`epiflow.tikzdefs`](../epiflow.tikzdefs).
+[`researchflow.tikzdefs`](../researchflow.tikzdefs).
 
 **Also remember the canvas you've been editing in is schematic, not a real renderer** — it draws
 every node as a generic circle/label-tag regardless of its actual shape or fill color, and never
@@ -149,7 +149,7 @@ The short version: a fresh `article.cls` document needs four additions before it
 \pgfdeclarelayer{nodelayer}
 \pgfdeclarelayer{edgelayer}
 \pgfsetlayers{main,nodelayer,edgelayer}    % "main" must be included
-\input{styles/epiflow.tikzstyles}          % defines style=box, style=arrow, etc.
+\input{styles/researchflow.tikzstyles}          % defines style=box, style=arrow, etc.
 ```
 
 The layer declarations are required because every TikZiT node/edge lives on the `nodelayer`/

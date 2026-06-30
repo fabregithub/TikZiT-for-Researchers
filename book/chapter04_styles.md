@@ -3,13 +3,13 @@
 # Chapter 4 — Styles
 
 This chapter walks through editing styles two ways — via the GUI Style Editor, and by hand-editing
-[`epiflow.tikzstyles`](../epiflow.tikzstyles) — and uses both to build an inclusion/exclusion color
+[`researchflow.tikzstyles`](../researchflow.tikzstyles) — and uses both to build an inclusion/exclusion color
 convention for flowchart boxes, the kind of thing you'll reuse across every template in
 [Chapter 6](chapter06_templates.md).
 
 ## 1. Opening the Style Editor
 
-Open `epiflow.tikzstyles` in VS Code. It opens in TikZiT's custom Style Editor (not plain text) —
+Open `researchflow.tikzstyles` in VS Code. It opens in TikZiT's custom Style Editor (not plain text) —
 a form with **+ Node Style** / **+ Edge Style** buttons, a field set (`name`, `draw`, `fill`,
 `tikzit draw`, `tikzit fill`, `shape`, `tikzit shape`), and **Apply** / **Reset** / **Edit** /
 **Delete** buttons. The swatches on the right preview every style currently defined.
@@ -35,7 +35,7 @@ hit that specific problem.
 
 Click the `include` swatch, change `draw` to `blue!60!black` and `fill` to `blue!10`, click
 **Apply**. The swatch updates immediately, and the change lands directly in
-`epiflow.tikzstyles` as text:
+`researchflow.tikzstyles` as text:
 
 ```latex
 \tikzstyle{include}=[draw=blue!60!black, rectangle, rounded corners, align=center, minimum width=4cm, minimum height=1cm, fill=blue!10]
@@ -75,7 +75,7 @@ now uses `style=exclude`, the others `style=include`. A third, neutral `process`
 inclusion/exclusion meaning) was added in Chapter 6 for steps like "Randomized" or "Records
 screened" that are neither an inclusion nor exclusion outcome — just a count at a pipeline stage.
 Chapter 6's STROBE/CONSORT/PRISMA templates build on all three node styles plus a plain `arrow`
-edge style, so a single shared `epiflow.tikzstyles` file keeps every diagram's color language
+edge style, so a single shared `researchflow.tikzstyles` file keeps every diagram's color language
 consistent. Chapter 6's lab-protocol template adds a fourth visual family entirely — left-anchored
 `stage`/`substep` boxes and a borderless `spine` edge style — for step-by-step method diagrams
 rather than participant-flow diagrams; see Chapter 6 §4 for why that one needs `anchor=west`, and
@@ -101,6 +101,6 @@ Two practical limits fell out of hitting this directly:
   want TikZiT's panel to categorize it correctly; reserve fancier `arrows.meta` tips for chapter
   8's hand-edited TikZ, outside what the GUI panel needs to understand.
 
-[`epiflow.tikzstyles`](../epiflow.tikzstyles) at the repo root reflects both constraints.
+[`researchflow.tikzstyles`](../researchflow.tikzstyles) at the repo root reflects both constraints.
 
 [Next: Chapter 5 — Flowcharts →](chapter05_flowcharts.md)
